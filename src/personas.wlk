@@ -1,12 +1,14 @@
 
 object olivia {
 	var gradoDeConcentracion =6
+	
 	method recibirMasajes(){ gradoDeConcentracion += 3}
+	method darseUnBanioDeVapor() {} // Acción agregada a Olivia para ser compatible con el spa
+	
 	method discute(){ gradoDeConcentracion = 0.max(gradoDeConcentracion - 1)}//evita que su concentración sea negativa
 	method gradoDeConcentracion(){ return gradoDeConcentracion}
-	method darseUnBanioDeVapor() {} // Acción agregada a Olivia para ser compatible con el spa
+	
 }
-
 
 object bruno {
 	var esFeliz = true
@@ -19,12 +21,13 @@ object bruno {
 	
 	method recibirMasajes() { esFeliz = true }
 	method darseUnBanioDeVapor() { peso -= 500 ; tieneSed = true }
+	
 	method tomarAgua() { tieneSed = false }
 	method comerFideos() { peso += 250; tieneSed = true }
 	method correr() { peso -= 300 }
 	method verElNoticiero() { esFeliz = false }
-	
 	method estaPerfecto() { return self.esFeliz() and not self.tieneSed() and self.peso().between(50000, 70000) }
+	
 	method mediodiaEnCasa() { 
 		self.comerFideos()
 		self.tomarAgua()
@@ -38,6 +41,7 @@ object ramiro {
 	
 	method recibirMasajes() { nivelDeContractura= 0.max(nivelDeContractura - 2) }
 	method darseUnBanioDeVapor() { tieneLaPielGrasa = false }
+	
 	method comerseUnBigMac() { tieneLaPielGrasa = true  }
 	method bajarALaFosa() { tieneLaPielGrasa = true ; nivelDeContractura += 1 }
 	method jugarAlPaddle() { nivelDeContractura += 3 }
